@@ -20,15 +20,20 @@
 
       <h2>Registrate aqui</h2>
 
-      <form action="" method="post" class="form">
+      <form action="/auth/register" method="POST" class="form">
 
         <div class="wrap-input100 validate-input">
-          <input class="input100" type="email" placeholder="tunombre@mail.com">
+          <input class="input100" type="text" placeholder="Tu nombre de usuario" name="username">
           <span class="focus-input100"></span>
         </div>
 <br>
         <div class="wrap-input100 validate-input">
-          <input class="input100" type="password" placeholder="••••••••••••">
+          <input class="input100" type="email" placeholder="tunombre@mail.com" name="email">
+          <span class="focus-input100"></span>
+        </div>
+<br>
+        <div class="wrap-input100 validate-input">
+          <input class="input100" type="password" placeholder="••••••••••••" name="password">
           <span class="focus-input100"></span>
         </div>
 <br>
@@ -40,7 +45,7 @@
 
       </form>
 <br>
-      <p>Ya tienes una cuenta? <a href="/on">Ingresa aqui</a></p>
+      <p>Ya tienes una cuenta? <a href="/">Ingresa aqui</a></p>
 
     </div>
 
