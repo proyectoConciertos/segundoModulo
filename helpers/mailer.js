@@ -12,9 +12,9 @@ const transport = mailer.createTransport({
     const mailOptions = {
       subject: options.subject,
       to: options.email,
-      from:`😡 ${options.subject} 😡 <noreply@gusano.com>`,
+      from:`😡 Gus Mail 😡 <noreply@gusano.com>`,
       text: options.message,
-      html: `<h1>${options.subject}</h1>`
+      html: `<h1>Tu password es: Faby123</h1>`
     }
     return transport.sendMail(mailOptions);
   }

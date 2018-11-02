@@ -1,45 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-	<title>Login V5</title>
+	<title>Login Concert.me</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+
+<!--Links a los CSS (loginPage)-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="stylesheets/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="stylesheets/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="stylesheets/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="stylesheets/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="stylesheets/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="stylesheets/util.css">
-	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/animate.css">	
+	<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/animsition.min.css">    
+	<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/util.css">  
+	<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/main.css">
 </head>
 <body>
 	
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-login100" style="background-image: url('images/backgroundmusic2.png');">
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-				<form class="login100-form validate-form flex-sb flex-w" method="POST" action="">
+				<form class="login100-form validate-form flex-sb flex-w">
+                    <img src="/images/logo.png" class="logo">
 					<span class="login100-form-title p-b-53">
-						Ingresa con tus Redes Sociales
+						Ingresa con redes sociales
 					</span>
 
-          
 					<a href="#" class="btn-face m-b-20">
-						<img src="images/facebook-icon.png" alt="facebook">
+						<i class="fa fa-facebook-official"></i>
 						Facebook
 					</a>
 
@@ -47,16 +36,14 @@
 						<img src="images/icon-google.png" alt="GOOGLE">
 						Google
 					</a>
-					</form>
-
-        <form class="login100-form validate-form flex-sb flex-w" method="POST" action="/auth/main">
+					
 					<div class="p-t-31 p-b-9">
 						<span class="txt1">
 							Nombre de usuario
 						</span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Es necesario un nombre de usuario">
-						<input class="input100" type="text" name="username" placeholder="Tu nombre de usuario">
+					<div class="wrap-input100 validate-input" data-validate = "Username is required">
+						<input class="input100" type="text" name="username" placeholder="e.j. Michael_Jackson">
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -66,29 +53,25 @@
 						</span>
 
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Es necesario un password">
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<input class="input100" type="password" name="pass" placeholder="••••••••••••">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn" type="submit">
-							Click aqui!
+						<button class="login100-form-btn">
+							Ingresa ahora!
 						</button>
 					</div>
-          </form>
 
-        <form class="login100-form validate-form flex-sb flex-w" method="POST" action="/auth/register">
 					<div class="w-full text-center p-t-55">
 						<span class="txt2">
-							Aun no tienes cuenta?
+							Aún no tienes una cuenta?
 						</span>
-
-						<a href="/auth/register" class="txt2 bo1">
-							Registrate ahora
-						</a>
+                            <a href="/auth/register">Registrate ahora</a>
+                        
 					</div>
-         </form> 
+				</form>
 			</div>
 		</div>
 	</div>
@@ -97,21 +80,20 @@
 	<div id="dropDownSelect1"></div>
 	
 <!--===============================================================================================-->
-	<script src="javascripts/jquery-3.2.1.min.js"></script>
+	<script src="/javascripts/mainPage/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="javascripts/animsition.min.js"></script>
+	<script src="/javascripts/mainPage/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="javascripts/popper.js"></script>
-	<script src="javascripts/bootstrap.min.js"></script>
+	<script src="/javascripts/mainPage/popper.js"></script>
+	<script src="/javascripts/mainPage/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="javascripts/select2.min.js"></script>
+	<script src="/javascripts/mainPage/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="javascripts/moment.min.js"></script>
-	<script src="javascripts/daterangepicker.js"></script>
+	<script src="/javascripts/mainPage/moment.min.js"></script>
+	<script src="/javascripts/mainPage/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script src="javascripts/countdowntime.js"></script>
+	<script src="/javascripts/mainPage/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="javascripts/main.js"></script>
+	<script src="/javascripts/mainPage/main.js"></script>
 
 </body>
-</html>

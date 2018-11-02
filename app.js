@@ -12,6 +12,7 @@ const passport     = require('./helpers/passport') //Llamar al helper de passpor
 const session      = require('express-session') //Llamar a express sessions
 
 
+
 mongoose
   .connect(process.env.DB, {useNewUrlParser: true}) //Traemos la variable de entorno para la Base de Datos
   .then(x => {
