@@ -34,4 +34,12 @@ router.post('/register', (req,res) => {
       })
 })
 
+router.get('/main', (req,res) => {
+  res.render('main')
+})
+
+router.post('/main', (req,res) => {
+  res.render('main')
+})
+
 module.exports = router;
