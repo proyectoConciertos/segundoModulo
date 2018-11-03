@@ -1,1 +1,117 @@
-<h1>form</h1>
+<h1>Register a new concert!</h1>
+<div class="container">
+
+    <form action="/form" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="concertName">Concert name</label>
+            <input style="font: red" type="text" class="form-control" id="concertName" aria-describedby="concertName" placeholder="Enter the name of the concert/festival"
+                name="name">
+        </div>
+        <div class="form-group">
+            <label for="concertDate"> Concert date</label>
+            <input type="date" class="form-control" id="concertDate" name="date">
+        </div>
+        <div class="form-group-lg">
+            <label for="bandsInput">Bands</label>
+            {{!--
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" data-role="tagsinput"> --}}
+            <div class="tags-input form-control" data-name="tags-input" name="bands">
+                
+            </div>
+            <small id="bamdsHelp" class="form-text text-muted">Use commas to add a new band</small>
+        </div>
+
+        <div class="form-group">
+            <label for="concertVenue">Venue</label>
+            <input type="text" class="form-control" id="autocomplete" aria-describedby="venueHelp" placeholder="Enter venue" name="venueName">
+            <small id="venueHelp" class="form-text text-muted">Search for the venue</small>
+
+            <label for="">
+                Lat:
+                <input readonly type="text" id="lat" name="lat">
+            </label>
+            <label for="">
+                Lng:
+                <input readonly type="text" id="lng" name="lng">
+            </label>
+        </div>
+
+        <div class="form-group">
+            
+        </div>
+
+        <div class="form-group">
+
+            <label for="concertRating">Rating</label>
+            <div class="rating-container rating-lg rating-animate">
+                <div class="rating-stars" title="0.4 Stars">
+                    <input id="input-21b" value="0" type="text" class="rating rating-input" data-min="0" data-max="5" data-step="0.5" data-size="lg"
+                        required="" title="" name="rate">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Photos
+                <input type="file" name="photos" multiple>
+            </label>
+            
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox" value="" id="setlist" name="setlist"> Get Setlist</label>
+            {{!-- <button type="button" id="button" onclick="getSetlist()">Get Setlist!</button> --}}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/concerts" class="btn btn-danger">Cancel</a>
+
+
+    </form>
+</div>
+
+
+<script>
+    function formatDate(date) {
+        var d = new Date(date),
+            month = "" + (d.getMonth() + 1),
+            day = "" + (d.getDate() + 1),
+            year = d.getFullYear();
+        if (month.length < 2) month = "0" + month;
+        if (day.length < 2) day = "0" + day;
+        return [day, month, year].join("-");
+    }
+
+    function getSetlist() {
+        console.log('holi');
+        var setlist = document.getElementById('setlist');
+        var bands = document.getElementById('bandsz').value;
+        var date = document.getElementById('concertDate').value;
+        var rating = document.getElementById('input-21b');
+        date = formatDate(date);
+        //console.log(bands + date);
+        //console.log('Rating: ' + rating.value);
+        console.log(setlist.checked);
+    }
+
+    window.onload = function () {
+        const input = document.getElementById("autocomplete");
+        const lat = document.getElementById("lat");
+        const lng = document.getElementById("lng");
+        const dropdown = new google.maps.places.Autocomplete(input);
+        dropdown.addListener("place_changed", () => {
+            console.log(dropdown.getPlace());
+            let place = dropdown.getPlace();
+            lat.value = place.geometry.location.lat();
+            lng.value = place.geometry.location.lng();
+            name.value = place.name;
+        })
+    }
+
+
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+<script src="/javascripts/star-rating.js" type="text/javascript"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+<script src="/javascripts/tags.js"></script> {{!--
+<script src="/javascripts/setlist.js"></script> --}}
