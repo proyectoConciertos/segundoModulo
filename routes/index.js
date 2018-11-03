@@ -1,10 +1,18 @@
 const express = require('express');
 const router  = express.Router();
+const passport = require('passport');
+const User = require('../models/User');
+const mail = require('../helpers/mailer');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
 });
+
+router.post('/', passport.authenticate ('local', {
+  successRedirect: '/',
+  failureRedirect: '/register'
+}));
 
 router.get('/register', (req,res) => {
   res.render('register')
@@ -20,7 +28,7 @@ router.post('/register', (req,res) => {
           message: ""
         };
         mail.send(options); //recibo la funcion send de mailer y le doy options como parametro
-        res.redirect('/auth/main')
+        res.redirect('/')
       }).catch(err => {
         res.status(500).render("register", {err, msg:"No pudimos registrarte"}) //el err lo recibes de passport local mongoose
       })

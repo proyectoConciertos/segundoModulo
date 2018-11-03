@@ -14,7 +14,7 @@ const transport = mailer.createTransport({
       to: options.email,
       from:`😡 Gus Mail 😡 <noreply@gusano.com>`,
       text: options.message,
-      html: `<h1>Tu password es: Faby123</h1>`
+      html: `<h1>Tu password es: </h1>`
     }
     return transport.sendMail(mailOptions);
   }
@@ -23,6 +23,6 @@ const transport = mailer.createTransport({
     if (error) {
          console.log(error);
     } else {
-         console.log('Server is ready to take our messages');
+         console.log('Servidor listo');
     }
   });
