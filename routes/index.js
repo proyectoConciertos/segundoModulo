@@ -1,9 +1,10 @@
-<<<<<<< HEAD
 const express = require("express");
 const router = express.Router();
 const setlistfm = require("setlistfm-js");
 const Concert = require("../models/Concert");
 const upload = require('../helpers/multer');
+const passport = require('passport');
+const User = require('../models/User');
 
 var setlistfmClient = new setlistfm({
     key: "8e99d15f-0708-42ec-a955-845cfe715130", // Insert your personal key here
@@ -12,13 +13,9 @@ var setlistfmClient = new setlistfm({
 });
 
 
-=======
-const express = require('express');
-const router  = express.Router();
-const passport = require('passport');
-const User = require('../models/User');
-const mail = require('../helpers/mailer');
->>>>>>> d2999cd011fd6f7503dc32980775866f5a7b5d77
+
+
+
 
 /* GET home page */
 router.get("/", (req, res, next) => {
