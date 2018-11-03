@@ -4,14 +4,10 @@ const Schema = mongoose.Schema;
 
 const concertSchema = new Schema(
   {
-    owner: {
-        type: Schema.Types.ObjectId
-        ,ref: 'User'
-        ,required: true
-      }
-    ,name: String
+    name: String
     ,date: String
     ,bands: [String]
+    ,venueName: String
     ,venue: {
       type: {
         type: String
@@ -19,9 +15,10 @@ const concertSchema = new Schema(
       },
       coordinates: [Number]
     }
+    ,review: String
     ,rate: Number
     ,photos: [String]
-    ,Setlist: [String]
+    ,setlist: [String]
   },
   {
     timestamps: {
@@ -31,6 +28,8 @@ const concertSchema = new Schema(
   }
 );
 
+concertSchema.index({ venue: "2dsphere" });
+
 //userSchema.plugin(passportLocalMongoose, {usernameField: "email"});
 
-module.exports = mongoose.model("User", concertSchema);
+module.exports = mongoose.model("Concert", concertSchema);
