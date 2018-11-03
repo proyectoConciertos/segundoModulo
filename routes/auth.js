@@ -10,9 +10,14 @@ router.get('/', (req,res) => {
 })
 
 router.post('/', passport.authenticate('local', {
-  successRedirect: '/bid',
-  failureRedirect: '/login'
+  //successRedirect: '/',
+  //failureRedirect: '/'
 }));
+
+//Ruta preloader
+router.get('/preloadPage', (req,res) => {
+  res.render('preloadPage')
+})
 
 //Rutas registro
 router.get('/register', (req,res) => {
@@ -25,11 +30,11 @@ router.post('/register', (req,res) => {
       .then((user) => { //recibo el usuario
         const options = {
           email: user.email,
-          subject: "Confirma tu correo",
-          message: "O confirmas o cuello"
+          subject: "Correo de prueba",
+          message: ""
         };
         mail.send(options); //recibo la funcion send de mailer y le doy options como parametro
-        res.redirect('/auth/login')
+        res.redirect('/auth/main')
       }).catch(err => {
         res.status(500).render("register", {err, msg:"No pudimos registrarte"}) //el err lo recibes de passport local mongoose
       })
@@ -44,5 +49,8 @@ router.post('/main', (req,res) => {
 
 })
 
+router.get('/prueba', (req,res) => {
+  res.render('prueba')
+})
 
 module.exports = router;
