@@ -6,7 +6,7 @@
   
   body {
     /*background-color: $base-bgcolor;*/
-    background-image: url("/images/backgroundmusic2.png");
+    background-image: url("/images/backgroundgreen.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     color: #7e8ba3;
@@ -25,6 +25,13 @@
   
   .site__logo {
     margin-bottom: 2rem; }
+
+  .logo {
+    position: relative;
+    width: 250;
+    height: 171px;
+    margin-top: -41px;
+  }
   
   input {
     border: 0;
