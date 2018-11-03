@@ -155,6 +155,9 @@ router.get('/concerts', (req, res, next) => {
         .then(concerts => {
             res.render("concerts", {concerts});
         })
+})
+
+
 router.get('/register', (req,res) => {
   res.render('register')
 })
