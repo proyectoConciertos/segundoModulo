@@ -1,7 +1,7 @@
 <div class="container">
     <div class="list-group">
         {{#each concerts}}
-            <a href="/concert/{{this._id}}" class="list-group-item list-group-item-action">{{this.name}} - {{this.date}}</a>
+            <a href="/concert/{{this._id}}" class="list-group-item list-group-item-action">{{this.date}} - {{this.name}}</a>
         {{/each}}
         <a href="/form" class="btn btn-primary">Register a new Concert!</a>
     </div>

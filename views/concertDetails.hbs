@@ -9,55 +9,40 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">{{header}}</h5>
-            {{#each concert.bands}}
+            {{!-- {{#each concert.bands}}
                 <p class="card-text">{{this}}</p>
-            {{/each}} 
+            {{/each}}  --}}
+
+            <p class="card-text">{{concert.venueName}}</p>
+
+
 
             {{#if concert.venue.coordinates}}
                 <div id="res_map" style="width: 100%; height: 300px"></div>
             {{/if}}
             <br><br>
             
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <p class="card-text">{{concert.review}}</p>
+            <br><br>
+            <p class="card-text">{{concert.rate}}</p>
+            <br><br>
+            {{#each concert.setlist}}
+                <p class="card-text">{{this}}</p>
+            {{/each}}
+
+            <h2>Photos: </h2>
+            {{#if concert.photos}}
+                {{#each concert.photos}}
+                    <img src="{{this}}" alt="" style="width: 30%; height: 30%">
+                            
+                {{/each}} 
+            {{else}}
+                <li>No hay informacion disponible</li>
+            {{/if}}
+
         </div>
     </div>
-
-    <h1></h1>
-    <h2></h2>
-    <ul>
-        
-    </ul>
-
     
-
-    
-
-    <h2>Rating: {{concert.rate}}</h2>
-
-    <h2>Setlist: </h2>
-    {{#if concert.setlist}}
-    <ul>
-        {{#each concert.setlist}}
-            <li>{{this}}</li>
-        {{/each}}
-    </ul>
-    {{else}}
-        <li>No hay informacion disponible</li>
-    {{/if}}
-
-    <h2>Photos: </h2>
-    {{#if concert.photos}}
-                {{#each concert.photos}}
-                <img src="{{this}}" alt="" style="width: 30%; height: 30%">
-                    
-                {{/each}}
-                
-               
-    {{else}}
-        <li>No hay informacion disponible</li>
-    {{/if}}
-    
-
 </div>
 
 
