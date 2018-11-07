@@ -19,6 +19,8 @@ router.get('/preloadPage', (req,res) => {
   res.render('preloadPage')
 })
 
+console.log();
+
 //Rutas MainPage
 router.get('/main', (req,res) => {
   res.render('main')
