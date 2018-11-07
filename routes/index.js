@@ -180,7 +180,7 @@ router.get('/concert/:id', (req, res) => {
 router.post('/', passport.authenticate ('local', {
   successRedirect: '/',
   failureRedirect: '/register'
-});
+}));
 
 router.get('/register', (req,res) => {
   res.render('register')
