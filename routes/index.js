@@ -22,6 +22,7 @@ router.get("/", (req, res, next) => {
     res.render("index");
 });
 
+/* POST concert form */ 
 router.post("/form", upload.array('photos'), (req, res, next) => {
     let setlistSongs = [];
     let setlist = [];
@@ -31,7 +32,7 @@ router.post("/form", upload.array('photos'), (req, res, next) => {
         return file.url
     });
 
-    const {name, date, bands, venueName, lat, lng, rate} = req.body;
+    const {name, date, bands, venueName, lat, lng, review, rate} = req.body;
     let coordinates = [];
     coordinates.push(lng);
     coordinates.push(lat);
@@ -58,7 +59,8 @@ router.post("/form", upload.array('photos'), (req, res, next) => {
 
     //console.log(req.body);
     if ("setlist" in req.body) {
-        let date = formatDate(req.body.date);
+        let dateSetlist = req.body.date;
+        dateSetlist = formatDate(dateSetlist);
         //console.log(date);
         let band = req.body.bands[0];
         //console.log(band);
@@ -77,7 +79,7 @@ router.post("/form", upload.array('photos'), (req, res, next) => {
             let setlists = results.setlist;
             //console.log(setlists);
             for (let i = 0; i < setlists.length; i++) {
-                if (setlists[i].eventDate === date) {
+                if (setlists[i].eventDate === dateSetlist) {
                     for (let j = 0; j < setlists[i].sets.set.length; j++) {
                         //console.log(setlists[i].sets.set[j].song);
                         for (let k = 0; k < setlists[i].sets.set[j].song.length; k++) {
@@ -99,6 +101,7 @@ router.post("/form", upload.array('photos'), (req, res, next) => {
                 venue:{
                     coordinates
                 },
+                review,
                 rate,
                 photos,
                 setlist
@@ -151,15 +154,27 @@ router.post("/form", upload.array('photos'), (req, res, next) => {
  
 });
 
+/* GET concert form */ 
 router.get("/form", (req, res, next) => {
   res.render("form");
 });
 
+/* GET concert list */ 
 router.get('/concerts', (req, res, next) => {
     Concert.find()
+    .sort({ date: -1 })
         .then(concerts => {
             res.render("concerts", {concerts});
         })
+})
+
+router.get('/concert/:id', (req, res) => {
+    //console.log(req.params);
+    Concert.findById(req.params.id)
+    .then(concert => {
+        res.render('concertDetails', {header: concert.name, concert})
+    })
+    
 })
 
 router.post('/', passport.authenticate ('local', {
@@ -173,6 +188,8 @@ router.get('/register', (req,res) => {
 
 router.post('/register', (req,res) => {
   const {username, email, password}  = req.body   //deconsruccion
+  console.log(req.body)
+  
     User.register ({username, email}, password) //user.register es un metodo que nos da passport local mongoose para registrar
       .then((user) => { //recibo el usuario
         const options = {
@@ -184,7 +201,8 @@ router.post('/register', (req,res) => {
         res.redirect('/')
       }).catch(err => {
         res.status(500).render("register", {err, msg:"No pudimos registrarte"}) //el err lo recibes de passport local mongoose
-      })
+        console.log('NO jala el login', err);
+    })
 })
 
 module.exports = router;
