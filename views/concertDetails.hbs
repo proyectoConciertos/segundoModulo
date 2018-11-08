@@ -1,5 +1,5 @@
 
-
+<h1>creado por {{concert.owner.username}}</h1>
 <div class="container">
 
 
@@ -21,11 +21,13 @@
                 <div id="res_map" style="width: 100%; height: 300px"></div>
             {{/if}}
             <br><br>
-            
+            <p class="card-text"><strong>Review:</strong></p>
             <p class="card-text">{{concert.review}}</p>
             <br><br>
+            <p class="card-text"><strong>Rating:</strong></p>
             <p class="card-text">{{concert.rate}}</p>
             <br><br>
+            <p class="card-text"><strong>Setlist:</strong></p>
             {{#each concert.setlist}}
                 <p class="card-text">{{this}}</p>
             {{/each}}
@@ -42,7 +44,6 @@
 
         </div>
     </div>
-    
 </div>
 
 

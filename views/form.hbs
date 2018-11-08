@@ -1,7 +1,7 @@
 <h1>Register a new concert!</h1>
 <div class="container">
 
-    <form action="/form" method="POST" enctype="multipart/form-data">
+    <form action="/concert/form" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="concertName">Concert name</label>
             <input style="font: red" type="text" class="form-control" id="concertName" aria-describedby="concertName" placeholder="Enter the name of the concert/festival"
@@ -64,7 +64,7 @@
             {{!-- <button type="button" id="button" onclick="getSetlist()">Get Setlist!</button> --}}
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a href="/concerts" class="btn btn-danger">Cancel</a>
+        <a href="/concert" class="btn btn-danger">Cancel</a>
 
 
     </form>

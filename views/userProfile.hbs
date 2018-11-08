@@ -1,0 +1,77 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {{#each user}}
+                <div class="card" style="width: 18rem;">
+                    <img class="img-thumbnail" src="/images/generic_avatar.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>{{this.username}}</strong></h5>
+                        <p class="card-text">{{this.email}}</p>
+                        <p class="card-text"><strong>Following: </strong>{{this.following.length}}</p>
+                        <p class="card-text"><strong>Followers: </strong>{{this.followers.length}}</p>
+                        <form action="/users/{{this.username}}" method="POST">
+                            <input type="text" name="_id" value="{{ this._id }}">
+                            <input type="text" name="username" value="{{ this.username }}">
+                            <button type="submit" class="btn btn-primary">Follow</button>
+                            {{!-- <a href="" type="submit" class="">Follow</a> --}}
+                        </form>
+                            
+                    </div>
+                </div>
+            {{/each}}
+
+            <br>
+            <br>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://d85wutc1n854v.cloudfront.net/live/products/600x375/WB0858DB6.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://d85wutc1n854v.cloudfront.net/live/products/600x375/WB0858DB6.png" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+
+        </div>
+        <div class="col">
+            <h3>Concerts</h3>
+            <div class="list-group">
+                {{#each concerts}}
+                <a href="/concert/{{this._id}}" class="list-group-item list-group-item-action">{{this.date}} - {{this.name}}</a>
+                {{/each}}
+                <a href="/concert/new-concert" class="btn btn-primary">Register a new Concert!</a>
+            </div>
+            <h3>Users</h3>
+            <div class="list-group">
+                {{#each users}}
+                <a href="/users/{{this.username}}" class="list-group-item list-group-item-action">{{this.username}} - {{this.email}}</a>
+                {{/each}}
+                <a href="/concert/new-concert" class="btn btn-primary">Wat</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
