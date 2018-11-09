@@ -33,7 +33,7 @@ router.get("/", isLoggedIn, (req, res, next) => {
         Concert.find()
         .then(concerts => {
 
-            res.render('profile', {users});
+            res.render('profile', {users, concerts});
         })
     });
 });
@@ -61,7 +61,10 @@ router.post('/users/:username', (req, res) => {
     //console.log(followButton);
     User.findById(req.body._id)
     .then(user => {
+        console.log("que es",user)
+        console.log("id",req.body._id)
         // Check if you follow that user
+        console.log(user.followers.includes(req.user._id))
         if(user.followers.includes(req.user._id)) {
             console.log('Ya sigues a ese men');
             console.log(`A ${user.username} (${user._id}) lo siguen ${user.followers}`);
