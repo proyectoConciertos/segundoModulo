@@ -20,10 +20,12 @@ function checkIfOwner(req, res, next){
         })
         .catch(() => {
             res.redirect("/bid");
+            console.log('ajdhajdhajd');
         });
 }
 
 /* GET home page */
+// aksjfhaskjfhajksfh
 router.get("/", isLoggedIn, (req, res, next) => {
     User.find()
     .then(users => {
