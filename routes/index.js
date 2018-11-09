@@ -36,7 +36,7 @@ router.get("/", isLoggedIn, (req, res, next) => {
         Concert.find()
         .then(concerts => {
 
-            res.render('profile', {users});
+            res.render('profile', {users, concerts});
         })
     });
 });
