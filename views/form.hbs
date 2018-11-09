@@ -1,36 +1,75 @@
-<h1>Register a new concert!</h1>
+<link rel="stylesheet" href="/stylesheets/mainPage/style.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/util.css">  
+<link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/main.css">  
+
+<div class="colorlib-intro">
+    <div class="container">
+				<div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+						<div class="intro">
+<h1>Registra un nuevo concierto</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
 <div class="container">
 
     <form action="/form" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="concertName">Concert name</label>
-            <input style="font: red" type="text" class="form-control" id="concertName" aria-describedby="concertName" placeholder="Enter the name of the concert/festival"
-                name="name">
+
+        <div class="form-group p-t-31 p-b-9">
+            <span for="concertName" class="txt1">
+                Nombre del concierto
+            </span>
+        </div>    
+        <div class="wrap-input100 validate-input" data-validate = "Es requerido un concierto">
+            <input style="font: red" type="text" class="form-control input100" id="concertName" aria-describedby="concertName" placeholder="Escribe el nombre del concierto o festival" name="name">
+            <span class="focus-input100"></span>
         </div>
-        <div class="form-group">
-            <label for="concertDate"> Concert date</label>
-            <input type="date" class="form-control" id="concertDate" name="date">
+
+
+        <div class="form-group p-t-31 p-b-9">
+            <span for="concertDate" class="txt1"> 
+                Fecha del concierto/festival
+            </span>
         </div>
-        <div class="form-group-lg">
-            <label for="bandsInput">Bands</label>
+        <div class="wrap-input100 validate-input" data-validate = "Es requerida una fecha">
+            <input type="date" class="form-control input100" id="concertDate" name="date">
+        </div>
+
+
+        <div class="form-group p-t-31 p-b-9">
+            <label for="bandsInput" class="txt1">Bands</label>
             {{!--
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" data-role="tagsinput"> --}}
-            <div class="tags-input form-control" data-name="tags-input" name="bands">
-                
+            <input type="band" class="form-control" id="formGroupExampleInput" placeholder="Example input" data-role="tagsinput"> --}}
+            <div class="tags-input form-control wrap-input100 input100" data-name="tags-input" name="bands">
+               <small id="bamdsHelp" class="form-text text-muted"></small> 
             </div>
-            <small id="bamdsHelp" class="form-text text-muted">Use commas to add a new band</small>
+            
         </div>
 
-        <div class="form-group">
-            <label for="concertVenue">Venue</label>
-            <input type="text" class="form-control" id="autocomplete" aria-describedby="venueHelp" placeholder="Enter venue" name="venueName">
-            <small id="venueHelp" class="form-text text-muted">Search for the venue</small>
+        <div class="form-group p-t-31 p-b-9">
+            <span for="concertVenue" class="txt1">
+                Venue
+            </span>
+        </div>
+        <div class="wrap-input100 validate-input">  
+            <input type="text" class="form-control input100" id="autocomplete" aria-describedby="venueHelp" placeholder="Enter venue" name="venueName">
+            <span class="focus-input100"></span>
+            <small id="venueHelp" class="form-text text-muted txt1">Search for the venue</small>
+            
 
-            <label for="">
+            <label for="" class="txt1">
                 Lat:
                 <input readonly type="text" id="lat" name="lat">
             </label>
-            <label for="">
+            <label for="" class="txt1">
                 Lng:
                 <input readonly type="text" id="lng" name="lng">
             </label>
@@ -39,10 +78,10 @@
         <div class="form-group">
             
         </div>
-
+<br>
         <div class="form-group">
 
-            <label for="concertRating">Rating</label>
+            <label for="concertRating" class="txt1">Rating</label>
             <div class="rating-container rating-lg rating-animate">
                 <div class="rating-stars" title="0.4 Stars">
                     <input id="input-21b" value="0" type="text" class="rating rating-input" data-min="0" data-max="5" data-step="0.5" data-size="lg"
@@ -53,17 +92,17 @@
         </div>
 
         <div class="form-group">
-            <label for="exampleInputPassword1">Photos
+            <label for="exampleInputPassword1" class="txt1">Photos
                 <input type="file" name="photos" multiple>
             </label>
             
         </div>
-        <div class="form-group">
+        <div class="form-group txt1">
             <label><input type="checkbox" value="" id="setlist" name="setlist"> Get Setlist</label>
             {{!-- <button type="button" id="button" onclick="getSetlist()">Get Setlist!</button> --}}
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <a href="/concerts" class="btn btn-danger">Cancel</a>
+        <button type="submit" class="btn btn-primary txt1">Submit</button>
+        <a href="/cards" class="btn btn-danger txt1">Cancel</a>
 
 
     </form>

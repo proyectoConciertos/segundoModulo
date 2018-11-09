@@ -5,11 +5,7 @@
     font-weight: normal;
     font-style: normal; }
   
-  /* =======================================================
-  *
-  * 	Template Style 
-  *
-  * ======================================================= */
+
   body {
     font-family: "Montserrat", Arial, sans-serif;
     font-weight: 300;
@@ -890,6 +886,8 @@
   
   input[type="text"] {
     height: 50px; }
+    [type="band"] {
+      height: 20px; }
   
   .form-group {
     margin-bottom: 30px; }

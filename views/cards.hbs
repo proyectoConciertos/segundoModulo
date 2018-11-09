@@ -1,0 +1,214 @@
+<!--- Basic Page Needs
+   ================================================== -->
+	<meta charset="utf-8">
+	<title>Kreative Style Demo</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="/stylesheets/concerts/base.css">
+   <link rel="stylesheet" href="/stylesheets/concerts/layout.css">
+   <link rel="stylesheet" href="/stylesheets/mainPage/flexslider.css">
+   <link rel="stylesheet" href="/stylesheets/mainPage/style.css">
+   <link rel="stylesheet" href="/stylesheets/mainPage/bootstrap.css">
+
+   <style type="text/css">
+
+      .container {
+         background: #fff url(images/patterns/grey.png);
+         padding: 90px 0 102px 0;
+      }
+      .section-head h2 { font: 30px/42px montserrat-bold, sans-serif; }
+      .desc { font: 14px/24px opensans-regular, sans-serif; }
+
+   </style>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+
+</head>
+
+<body>
+{{#each concerts}}
+   <!-- Header
+   ================================================== -->
+   <header id="top" class="static" >
+
+      <div class="row">
+
+         <div class="col full">
+
+            <div class="logo">
+               <a href="index.html"><img alt="" src="images/logo.png"></a>
+            </div>
+
+            <nav id="nav-wrap">
+
+               <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	            <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+
+            </nav>
+
+         </div>
+
+      </div>
+
+   </header> <!-- Header End -->
+
+
+   <!-- Container
+   ================================================== -->
+   <section class="container">
+
+      <div class="row section-head add-bottom">
+         <div class="col full">
+
+            <h2>{{this.name}}</h2>
+            <p class="desc">{{this.venueName}}</p>
+
+            <p class="lead">{{this.date}}
+
+            <hr />
+
+         </div>
+      </div>
+
+      <div class="row add-bottom">
+
+         <div class="col half  add-bottom">
+
+            <h3>Revive el setlist!</h3>
+
+            <p><a href="#"><img width="120" height="120" class="pull-left" alt="sample-image" src="{{this.photos}}"></a>
+			   {{this.setlist}} </p>
+
+        
+         </div>
+
+         <div class="col half  add-bottom">
+
+            <h3>Tu experiencia</h3>
+
+            <p class="drop-cap">{{this.review}}
+			   </p>
+
+
+         </div>
+
+         <hr />
+
+      </div>
+
+      <aside id="colorlib-hero">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="flexslider">
+							<ul class="slides">
+						   	<li style="background-image: url(/stylesheets/mainPage/ghostconcert.png);">
+						   		<div class="overlay"></div>
+						   	</li>
+						   	<li style="background-image: url(/stylesheets/mainPage/systemconcert.jpg);">
+						   		<div class="overlay"></div>
+						   	</li>
+						   	<li style="background-image: url(/stylesheets/mainPage/bonjoviconcert.jpg);">
+						   		<div class="overlay"></div>
+						   	</li>
+						   	<li style="background-image: url(images/img_bg_4.jpg);">
+						   		<div class="overlay"></div>
+						   	</li>	
+						  	</ul>
+					  	</div>
+				  	</div>
+			  	</div>
+		  	</div>
+		</aside>
+
+
+      <div class="row add-bottom">
+
+         <div class="col half add-bottom">
+
+            <h3>Review</h3>
+
+            <aside class="pull-quote">
+			      <blockquote>
+					   <p>{{this.review}}</p>
+				   </blockquote>
+			   </aside>
+
+         </div>
+
+         <div class="col half add-bottom">
+
+            <h3>Review</h3>
+
+            <blockquote cite="http://where-i-got-my-info-from.com">
+			      <p>{{this.review}}
+               </p>
+				   <cite>
+					   <a href="#">Gus Zuppa</a>
+				   </cite>
+			   </blockquote>
+
+           
+
+         </div>
+
+         <hr />
+
+      </div>
+
+      
+      
+      
+
+{{/each}}
+
+      
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         
+
+         <div class="col g-5 pull-right">
+            <ul class="social-links">
+               <li><a href="#"><i class="icon-facebook"></i></a></li>
+               <li><a href="#"><i class="icon-twitter"></i></a></li>
+               <li><a href="#"><i class="icon-google-plus-sign"></i></a></li>
+               <li><a href="#"><i class="icon-linkedin"></i></a></li>
+               <li><a href="#"><i class="icon-skype"></i></a></li>
+               <li><a href="#"><i class="icon-rss-sign"></i></a></li>
+            </ul>
+         </div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+   <script src="/javascripts/main/jquery.flexslider-min.js"></script>
+
+   <script src="js/smoothscrolling.js"></script>

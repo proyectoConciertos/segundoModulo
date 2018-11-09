@@ -9,6 +9,8 @@ const setlistfm = require("setlistfm-js");
 const Concert = require("../models/Concert");
 const upload = require('../helpers/multer');
 
+
+
 var setlistfmClient = new setlistfm({
     key: "8e99d15f-0708-42ec-a955-845cfe715130", // Insert your personal key here
     format: "json", // "json" or "xml", defaults to "json"
@@ -141,7 +143,7 @@ router.post("/form", upload.array('photos'), (req, res, next) => {
               //     console.log("si pude")
               // }
              // res.render('concerts')
-              res.redirect("/concerts");
+              res.redirect("/cards");
           })
           .catch(err => {
               console.log('NO se pudo crear concierto en DB' + err);
@@ -172,7 +174,7 @@ router.post("/form", upload.array('photos'), (req, res, next) => {
           //     console.log("si pude")
           // }
          // res.render('concerts')
-          res.redirect("/concerts");
+          res.redirect("/cards");
       })
       .catch(err => {
           console.log('NO se pudo crear concierto en DB' + err);
@@ -186,10 +188,11 @@ router.get("/form", (req, res, next) => {
 res.render("form");
 });
 
-router.get('/concerts', (req, res, next) => {
+
+router.get('/cards', (req, res, next) => {
   Concert.find()
       .then(concerts => {
-          res.render("concerts", {concerts});
+          res.render("cards", {concerts});
       })
 })
 

@@ -1,9 +1,78 @@
-<div class="container">
-    <div class="list-group">
-        {{#each concerts}}
-            <a href="#" class="list-group-item list-group-item-action">{{this.name}} - {{this.date}}</a>
-        {{/each}}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/concerts/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/concerts/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/concerts/animate.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/concerts/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/concerts/perfect-scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/concerts/divconcert.css">
+    <link rel="stylesheet" href="/stylesheets/mainPage/style.css">
+    <link rel="stylesheet" href="/stylesheets/concerts/cards.scss">
+
+    
+
+</head>
+<body>
+	
+    <div class="colorlib-blog" style="center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+						<h2>Tus conciertos</h2>
+						<p>Recuerda las playlists de todos tus conciertos</p>
+					</div>
+				</div>
+				<div class="row">
+                    <div class="col-md-4 animate-box">
+                        {{#each concerts}}
+						<article class="article-entry">
+							<div class="admin">
+							</div>
+							<div class="desc2">
+								<h2><a href="blog.html">{{this.name}}</a></h2>
+							</div>
+							<a href="#" class="blog-img" style="background-image: {{this.photo}};"></a>
+							<div class="desc">
+								<p class="meta"><span class="day">04</span><span class="month">May</span></p>
+								<p>La explosión del metal en México encabezada por Scorpions, Ozzy Osbourne, Deep Purple y Judas Priest. Dos dias de headbang, metal y rock en CDMX!</p>
+							</div>
+						</article>
+
+                <div class="row container col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+                    {{this.setlist}}
+                </div>
+
+
+                        {{/each}}
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+
         <a href="/form" class="btn btn-primary">Register a new Concert!</a>
-    </div>
-</div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<script src="/javascripts/mainPage/jquery-3.2.1.min.js"></script>
+	<script src="/javascripts/mainPage/popper.js"></script>
+	<script src="/javascripts/mainPage/bootstrap.min.js"></script>
+	<script src="/javascripts/mainPage/select2.min.js"></script>
+	<script src="/javascripts/mainPage/main.js"></script>
+
+</body>
 
