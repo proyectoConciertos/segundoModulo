@@ -5,6 +5,12 @@ const Concert = require("../models/Concert");
 const User = require("../models/User");
 
 
+router.get("/main", (req, res) => {
+    res.render("main");
+  });
+  
+  router.post("/main", (req, res) => {});
+
 //ricardo rama
 
 function isLoggedIn(req, res, next){

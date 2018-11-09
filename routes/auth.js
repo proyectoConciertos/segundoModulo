@@ -67,11 +67,6 @@ router.get("/preloadPage", (req, res) => {
 console.log();
 
 //Rutas MainPage
-router.get("/main", (req, res) => {
-  res.render("main");
-});
-
-router.post("/main", (req, res) => {});
 
 
 module.exports = router;

@@ -1,20 +1,47 @@
+<!-- CSS's y Fuentes -->
 <link rel="stylesheet" href="/stylesheets/mainPage/style.css">
 <link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/util.css">  
 <link rel="stylesheet" type="text/css" href="/stylesheets/loginPage/main.css">  
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/profile/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="/stylesheets/profile/agency.min.css" rel="stylesheet">
 
-<div class="colorlib-intro">
-    <div class="container">
-				<div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-						<div class="intro">
-<h1>Registra un nuevo concierto</h1>
-                </div>
-            </div>
+<!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Concert.me</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Usuarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/concert/new-concert">Registra un concierto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Artistas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Contacto</a>
+            </li>
+          </ul>
         </div>
-    </div>
-</div>
+      </div>
+    </nav>
+
 
 <br>
 <br>
@@ -105,6 +132,7 @@
 </div>
 
 
+
 <script>
     function formatDate(date) {
         var d = new Date(date),
@@ -145,8 +173,21 @@
 
 </script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+
 <script src="/javascripts/star-rating.js" type="text/javascript"></script>
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
 <script src="/javascripts/tags.js"></script> {{!--
 <script src="/javascripts/setlist.js"></script> --}}
+ <!-- Bootstrap core JavaScript -->
+    <script src="/javascripts/profile/jquery.min.js"></script>
+    <script src="/javascripts/profile/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/javascripts/profile/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="/javascripts/profile/jqBootstrapValidation.js"></script>
+    <script src="/javascripts/profile/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/javascripts/profile/agency.min.js"></script>
