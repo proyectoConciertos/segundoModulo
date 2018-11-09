@@ -4,7 +4,12 @@ const Schema = mongoose.Schema;
 
 const concertSchema = new Schema(
   {
-    name: String
+    owner: {
+        type: Schema.Types.ObjectId
+        ,ref: 'User'
+        ,required: true
+    }
+    ,name: String
     ,date: String
     ,bands: [String]
     ,venueName: String

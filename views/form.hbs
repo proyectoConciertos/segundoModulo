@@ -1,7 +1,7 @@
 <h1>Register a new concert!</h1>
 <div class="container">
 
-    <form action="/form" method="POST" enctype="multipart/form-data">
+    <form action="/concert/form" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="concertName">Concert name</label>
             <input style="font: red" type="text" class="form-control" id="concertName" aria-describedby="concertName" placeholder="Enter the name of the concert/festival"
@@ -37,7 +37,8 @@
         </div>
 
         <div class="form-group">
-            
+            <label for="exampleFormControlTextarea1">Review: </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="review"></textarea>
         </div>
 
         <div class="form-group">
@@ -53,8 +54,8 @@
         </div>
 
         <div class="form-group">
-            <label for="exampleInputPassword1">Photos
-                <input type="file" name="photos" multiple>
+            <label for="exampleFormControlFile1">Photos
+                <input type="file" class="form-control-file" name="photos" multiple>
             </label>
             
         </div>
@@ -63,7 +64,7 @@
             {{!-- <button type="button" id="button" onclick="getSetlist()">Get Setlist!</button> --}}
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a href="/concerts" class="btn btn-danger">Cancel</a>
+        <a href="/concert" class="btn btn-danger">Cancel</a>
 
 
     </form>

@@ -1,9 +1,23 @@
 <div class="container">
     <div class="list-group">
         {{#each concerts}}
-            <a href="#" class="list-group-item list-group-item-action">{{this.name}} - {{this.date}}</a>
+            <a href="/concert/{{this._id}}" class="list-group-item list-group-item-action">{{this.date}} - {{this.name}}</a>
         {{/each}}
-        <a href="/form" class="btn btn-primary">Register a new Concert!</a>
+        <a href="/concert/new-concert" class="btn btn-primary">Register a new Concert!</a>
     </div>
+    <div class="card-columns">
+        {{#each concerts}}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.date}}</h6>
+                    <p class="card-text">{{this.venueName}}</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    
 </div>
 

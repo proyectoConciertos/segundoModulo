@@ -8,6 +8,7 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+
 const passport     = require('./helpers/passport') //Llamar al helper de passport
 const session      = require('express-session') //Llamar a express sessions
 
@@ -32,7 +33,7 @@ app.use(session({
   secret: process.env.SECRET,
   resave: true,
   saveUninitialized: true,
-}))
+}));
 
 //Middleware setup de Passport
 app.use(passport.initialize());
@@ -65,10 +66,12 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 
-const index = require('./routes/index');
-const auth = require('./routes/auth')
+const index   = require('./routes/index');
+const auth    = require('./routes/auth')
+const concert = require('./routes/concert');
 app.use('/', index);
 app.use('/auth', auth)
+app.use('/concert', concert)
 
 
 module.exports = app;
