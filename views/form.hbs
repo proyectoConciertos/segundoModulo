@@ -21,16 +21,11 @@
 
 <div class="container">
 
-    <form action="/form" method="POST" enctype="multipart/form-data">
-
-        <div class="form-group p-t-31 p-b-9">
-            <span for="concertName" class="txt1">
-                Nombre del concierto
-            </span>
-        </div>    
-        <div class="wrap-input100 validate-input" data-validate = "Es requerido un concierto">
-            <input style="font: red" type="text" class="form-control input100" id="concertName" aria-describedby="concertName" placeholder="Escribe el nombre del concierto o festival" name="name">
-            <span class="focus-input100"></span>
+    <form action="/concert/form" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="concertName">Concert name</label>
+            <input style="font: red" type="text" class="form-control" id="concertName" aria-describedby="concertName" placeholder="Enter the name of the concert/festival"
+                name="name">
         </div>
 
 
@@ -76,7 +71,8 @@
         </div>
 
         <div class="form-group">
-            
+            <label for="exampleFormControlTextarea1">Review: </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="review"></textarea>
         </div>
 <br>
         <div class="form-group">
@@ -92,8 +88,8 @@
         </div>
 
         <div class="form-group">
-            <label for="exampleInputPassword1" class="txt1">Photos
-                <input type="file" name="photos" multiple>
+            <label for="exampleFormControlFile1">Photos
+                <input type="file" class="form-control-file" name="photos" multiple>
             </label>
             
         </div>
@@ -101,8 +97,8 @@
             <label><input type="checkbox" value="" id="setlist" name="setlist"> Get Setlist</label>
             {{!-- <button type="button" id="button" onclick="getSetlist()">Get Setlist!</button> --}}
         </div>
-        <button type="submit" class="btn btn-primary txt1">Submit</button>
-        <a href="/cards" class="btn btn-danger txt1">Cancel</a>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/concert" class="btn btn-danger">Cancel</a>
 
 
     </form>
