@@ -70,33 +70,35 @@ router.post('/users/:username', (req, res) => {
     //console.log(followButton);
     User.findById(req.body._id)
     .then(user => {
-        // Check if you follow that user
-        if(user.followers.includes(req.user._id)) {
+        let followedBool = false;
+        // console.log(user.followers[0]);
+        // console.log(req.user._id);
+
+        for(let i = 0; i < user.followers.length; i++) {
+            console.log(i);
+            if(user.followers[i].equals(req.user._id)) {
+                followedBool = true;
+            }
+        }
+        if(followedBool === true) {
             console.log('Ya sigues a ese men');
             console.log(`A ${user.username} (${user._id}) lo siguen ${user.followers}`);
             console.log(`A ${req.user.username} (${req.user._id}) sigue a ${req.user.following}`);
-            // user.followers.splice(req.body._id, 1);
-            // user.save();
-            // req.user.following.splice(user._id, 1);
-            // req.user.save();
-            console.log(req.body);
-            res.status(204).send();
+            user.followers.splice(req.body._id, 1);
+            user.save();
+            req.user.following.splice(user._id, 1);
+            req.user.save();   
+            res.redirect(req.get('referer'));
         } else {
             console.log('Aun no sigues a ese men');
             console.log(`A ${user.username} (${user._id}) lo siguen ${user.followers}`);
             console.log(`A ${req.user.username} (${req.user._id}) sigue a ${req.user.following}`);
-            // user.followers.push(req.user._id);
-            // user.save();
-            // req.user.following.push(user._id);
-            // req.user.save();
-            console.log(req.body);
-            res.status(204).send();
+            user.followers.push(req.user._id);
+            user.save();
+            req.user.following.push(user._id);
+            req.user.save();
+            res.redirect(req.get('referer'));
         }
-        // console.log(user);
-        // user.followers.push(req.body._id);
-        // user.save();
-        // req.user.following.push(user._id);
-        // req.user.save();
     })
     // console.log(req.user.followers);
     // req.user.following
