@@ -55,15 +55,42 @@ router.get('/users/:username', (req, res) => {
 // FOLLOW A USER -> UPDATE USER FOLLOWING AND FOLLOWER LIST
 // HOW TO FOLLOW/UNFOLLOW?
 router.post('/users/:username', (req, res) => {
+    //let followButton = document.getElementById('followButton');
+    //console.log(followButton);
     User.findById(req.body._id)
     .then(user => {
-        console.log(user);
+        // Check if you follow that user
+        if(user.followers.includes(req.user._id)) {
+            console.log('Ya sigues a ese men');
+            console.log(`A ${user.username} (${user._id}) lo siguen ${user.followers}`);
+            console.log(`A ${req.user.username} (${req.user._id}) sigue a ${req.user.following}`);
+            // user.followers.splice(req.body._id, 1);
+            // user.save();
+            // req.user.following.splice(user._id, 1);
+            // req.user.save();
+            console.log(req.body);
+            res.status(204).send();
+        } else {
+            console.log('Aun no sigues a ese men');
+            console.log(`A ${user.username} (${user._id}) lo siguen ${user.followers}`);
+            console.log(`A ${req.user.username} (${req.user._id}) sigue a ${req.user.following}`);
+            // user.followers.push(req.user._id);
+            // user.save();
+            // req.user.following.push(user._id);
+            // req.user.save();
+            console.log(req.body);
+            res.status(204).send();
+        }
+        // console.log(user);
+        // user.followers.push(req.body._id);
+        // user.save();
+        // req.user.following.push(user._id);
+        // req.user.save();
     })
     // console.log(req.user.followers);
-    // req.user.following.push(req.body._id);
+    // req.user.following
     // req.user.save();
-    console.log(req.body);
-    res.redirect('back');
+    
 })
 
 module.exports = router;

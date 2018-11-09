@@ -51,14 +51,14 @@
                 {{#each concerts}}
                     <a href="/concert/{{this._id}}" class="list-group-item list-group-item-action">{{this.date}} - {{this.name}}</a>
                 {{/each}}
-                <a href="/form" class="btn btn-primary">Register a new Concert!</a>
+                <a href="/concert/new-concert" class="btn btn-primary">Register a new Concert!</a>
             </div>
             <h3>Users</h3>
             <div class="list-group">
                 {{#each users}}
                     <a href="/users/{{this.username}}" class="list-group-item list-group-item-action">{{this.username}} - {{this.email}}</a>
                 {{/each}}
-                <a href="/concert/new-concert" class="btn btn-primary">Wat</a>
+                <a href="#" class="btn btn-primary">Wat</a>
             </div>
         </div>
     </div>
