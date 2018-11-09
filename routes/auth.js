@@ -4,6 +4,8 @@ const passport = require("passport");
 const User = require("../models/User");
 const mail = require("../helpers/mailer");
 
+
+
 router.get("/login", (req, res) => {
     res.render("login");
 });
@@ -71,8 +73,5 @@ router.get("/main", (req, res) => {
 
 router.post("/main", (req, res) => {});
 
-router.get("/prueba", (req, res) => {
-  res.render("prueba");
-});
 
 module.exports = router;
