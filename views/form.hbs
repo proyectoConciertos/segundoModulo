@@ -15,7 +15,7 @@
 <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Concert.me</a>
+        <a class="navbar-brand js-scroll-trigger" href="/">Concert.me</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -88,12 +88,10 @@
             
 
             <label for="" class="txt1">
-                Lat:
-                <input readonly type="text" id="lat" name="lat">
+                <input readonly type="hidden" id="lat" name="lat">
             </label>
             <label for="" class="txt1">
-                Lng:
-                <input readonly type="text" id="lng" name="lng">
+                <input readonly type="hidden" id="lng" name="lng">
             </label>
         </div>
 
@@ -105,12 +103,7 @@
         <div class="form-group">
 
             <label for="concertRating" class="txt1">Rating</label>
-            {{!-- <div class="rating-container rating-lg rating-animate">
-                <div class="rating-stars" title="0.4 Stars">
-                    <input id="input-21b" value="0" type="text" class="rating rating-input" data-min="0" data-max="5" data-step="0.5" data-size="lg"
-                        required="" title="" name="rate">
-                </div>
-            </div> --}}
+            
             <div class="dropdown">
             
                 <select name="rate">

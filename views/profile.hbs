@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/users">Perfil</a>
+              <a class="nav-link js-scroll-trigger" href="/users/{{currentUser.username}}">Perfil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#">Usuarios</a>
@@ -62,7 +62,7 @@
         <div class="intro-text">
           <div class="intro-lead-in">Bienvenido a Concert.me!</div>
           <div class="intro-heading text-uppercase">Donde revives tu experiencia</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#">Mi Perfil</a>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/users/{{currentUser.username}}">Mi Perfil</a>
         </div>
       </div>
     </header>
@@ -219,7 +219,7 @@
                 {{/each}}
                 <a href="/concert/new-concert" class="btn btn-primary">Registra un nuevo concierto</a>
             </div>
-            <h3>Usuarios</h3>
+            <h3 class="usuarios">Usuarios</h3>
             <div class="list-group">
                 {{#each users}}
                     <a href="/users/{{this.username}}" class="list-group-item list-group-item-action">{{this.username}} - {{this.email}}</a>

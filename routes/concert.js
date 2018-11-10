@@ -12,21 +12,7 @@ var setlistfmClient = new setlistfm({
 
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next();
-    res.redirect("/auth/login");
-}
-
-function checkIfOwner(req, res, next){
-    Concert.findById(req.params.id)
-        .then(bid => {
-            if(bid.owner.toString() === req.user._id.toString()){
-                req.bid = bid;
-                return next();
-            }
-            res.redirect('/bid');
-        })
-        .catch(() => {
-            res.redirect("/bid");
-        });
+    res.redirect("/landing");
 }
 
 router.get("/", isLoggedIn, (req, res) => {
@@ -38,7 +24,7 @@ router.get("/", isLoggedIn, (req, res) => {
 });
 
 /* GET concert form */ 
-router.get("/new-concert", (req, res, next) => {
+router.get("/new-concert", isLoggedIn, (req, res, next) => {
     res.render("form");
 });
 
@@ -173,17 +159,17 @@ router.post("/form", isLoggedIn, upload.array('photos'), (req, res, next) => {
     }
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', isLoggedIn, (req, res) => {
+    var currentUser = req.user;
     //console.log(req.params);
     Concert.findById(req.params.id)
     .populate('owner', 'username')
     .then(concert => {
-        
-        res.render('concertDetails', {header: concert.name, concert})
+        res.render('concertDetails', {header: concert.name, concert, currentUser})
     }) 
 });
 
-router.get('/feed', (req, res) => {
+router.get('/feed', isLoggedIn, (req, res) => {
     Concert.find()
     .sort({ date: -1 })
         .then(concerts => {
