@@ -1,9 +1,4 @@
 
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-
 @font-face {
     font-family: Poppins-Regular;
     src: url('../fonts/poppins/Poppins-Regular.ttf'); 
@@ -14,8 +9,6 @@
     src: url('../fonts/poppins/Poppins-Bold.ttf'); 
   }
   
-  /*//////////////////////////////////////////////////////////////////
-  [ RESTYLE TAG ]*/
   * {
       margin: 0px; 
       padding: 0px; 
@@ -27,7 +20,6 @@
       font-family: sans-serif;
   }
   
-  /* ------------------------------------ */
   a {
       margin: 0px;
       transition: all 0.4s;
@@ -43,8 +35,7 @@
   a:hover {
       text-decoration: none;
   }
-  
-  /* ------------------------------------ */
+
   h1,h2,h3,h4,h5,h6 {margin: 0px;}
   
   p {margin: 0px;}
@@ -54,8 +45,7 @@
       list-style-type: none;
   }
   
-  
-  /* ------------------------------------ */
+
   input {
     display: block;
       outline: none;
@@ -71,7 +61,7 @@
     border-color: transparent !important;
   }
   
-  /* ------------------------------------ */
+
   button {
       outline: none !important;
       border: none;
@@ -86,10 +76,7 @@
       border: none !important;
   }
   
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ Table ]*/
-  
+
   .limiter {
     width: 100%;
     margin: 0 auto;

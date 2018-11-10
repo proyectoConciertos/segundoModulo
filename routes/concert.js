@@ -5,9 +5,9 @@ const upload = require('../helpers/multer');
 const setlistfm = require("setlistfm-js");
 
 var setlistfmClient = new setlistfm({
-    key: "8e99d15f-0708-42ec-a955-845cfe715130", // Insert your personal key here
-    format: "json", // "json" or "xml", defaults to "json"
-    language: "en" // defaults to "en"
+    key: "8e99d15f-0708-42ec-a955-845cfe715130", //Colocar la Personal Key de la API
+    format: "json", //Elegir json o xml
+    language: "en" //Default en Inglés
 });
 
 function isLoggedIn(req, res, next){
@@ -34,7 +34,6 @@ router.post("/form", isLoggedIn, upload.array('photos'), (req, res, next) => {
     let setlistSongs = [];
     let setlist = [];
     let concert = {};
-    //console.log(req.files);
     let photos = req.files.map(file => {
         return file.url
     });
@@ -57,21 +56,14 @@ router.post("/form", isLoggedIn, upload.array('photos'), (req, res, next) => {
         return [day, month, year].join("-");
     }
 
-    //var keys = Object.keys(req.body.concertBands)
     if (req.body.bands.length > 1) {
         req.body.bands = req.body.bands.split(",");
     }
 
-    //console.log(req.body);
     if ("setlist" in req.body) {
         let dateSetlist = req.body.date;
         dateSetlist = formatDate(dateSetlist);
-        //console.log(date);
         let band = req.body.bands[0];
-        //console.log(band);
-
-        //Por que Rediriges al form??? POR QUE?
-        //res.redirect("/form");
 
         //SEARCH SETLIST HERE
         setlistfmClient.searchSetlists({
@@ -79,18 +71,13 @@ router.post("/form", isLoggedIn, upload.array('photos'), (req, res, next) => {
             p: 1
         })
         .then(function(results) {
-            //console.log(results);
-
-            let setlists = results.setlist;
-            //console.log(setlists);
+        let setlists = results.setlist;
             for (let i = 0; i < setlists.length; i++) {
                 if (setlists[i].eventDate === dateSetlist) {
                     for (let j = 0; j < setlists[i].sets.set.length; j++) {
-                        //console.log(setlists[i].sets.set[j].song);
                         for (let k = 0; k < setlists[i].sets.set[j].song.length; k++) {
                             setlistSongs.push(setlists[i].sets.set[j].song[k].name);    
                         }
-                        //res.redirect("/form");
                     }
                 }
             }
@@ -115,10 +102,6 @@ router.post("/form", isLoggedIn, upload.array('photos'), (req, res, next) => {
             console.log("concert",req.body)
             Concert.create(concert)
             .then(() => {
-                // if(res.status(200)) {
-                //     console.log("si pude")
-                // }
-               // res.render('concerts')
                 res.redirect("/concert");
             })
             .catch(err => {
@@ -127,7 +110,6 @@ router.post("/form", isLoggedIn, upload.array('photos'), (req, res, next) => {
             console.log(req.body);           
         })
         .catch(function(error) {
-            // Returns error
             console.log(error);
         });
     } else{
@@ -147,10 +129,6 @@ router.post("/form", isLoggedIn, upload.array('photos'), (req, res, next) => {
         console.log("concert",req.body)
         Concert.create(concert)
         .then(() => {
-            // if(res.status(200)) {
-            //     console.log("si pude")
-            // }
-           // res.render('concerts')
             res.redirect("/concert");
         })
         .catch(err => {
@@ -173,7 +151,6 @@ router.get('/feed', isLoggedIn, (req, res) => {
     Concert.find()
     .sort({ date: -1 })
         .then(concerts => {
-            //res.render("feed", {concerts});
             console.log(concerts);
         })
 })

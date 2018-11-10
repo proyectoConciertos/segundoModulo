@@ -9,7 +9,6 @@ router.get("/landing", (req, res) => {
     res.render("landing");
 });
   
-
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next();
     res.redirect("/landing");
@@ -30,7 +29,6 @@ router.get("/", isLoggedIn, (req, res, next) => {
 
 router.get('/users/:username', isLoggedIn, (req, res) => {
     var followedBool = false;
-    //var myProfile = false;
     var myObj = {
         myString: 'Hi'
     }
@@ -94,5 +92,4 @@ router.post('/users/:username', isLoggedIn, (req, res) => {
     
 })
 
-//aqui termina
 module.exports = router;

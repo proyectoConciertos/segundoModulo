@@ -45,23 +45,16 @@
 <div class="container">
 
 
-    <div class="card">
-        <div class="card-header">
+<div class="card">
+    <div class="card-header">
             {{concert.date}}
-        </div>
+    </div>
         <div class="card-body">
             <h5 class="card-title">{{header}}</h5>
-            {{!-- {{#each concert.bands}}
-                <p class="card-text">{{this}}</p>
-            {{/each}}  --}}
-
             <p class="card-text">{{concert.venueName}}</p>
-
-
-
-            {{#if concert.venue.coordinates}}
+                {{#if concert.venue.coordinates}}
                 <div id="res_map" style="width: 100%; height: 300px"></div>
-            {{/if}}
+                {{/if}}
             <br><br>
             <p class="card-text"><strong>Review:</strong></p>
             <p class="card-text">{{concert.review}}</p>
@@ -70,9 +63,8 @@
             <p class="card-text">{{concert.rate}}</p>
             <br><br>
             
-
-
-            <div id="fb-root"></div>
+ <!-- Facebook button -->           
+<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -83,52 +75,31 @@
 
 <div class="fb-share-button" data-href="https://concert-me.herokuapp.com" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fconcert-me.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
 
-<a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet"
-  data-size="large"
-  data-text="custom share text"
-  data-url="https://concert-me.herokuapp.com"
-  data-hashtags="example,demo"
-  data-via="twitterdev"
-  data-related="twitterapi,twitter">
-Tweet
-</a>    
-
 <br><br><br>
 
             <p class="card-text"><strong>Setlist:</strong></p>
             {{#each concert.setlist}}
                 <p class="card-text">{{this}}</p>
             {{/each}}
-
             <h2>Photos: </h2>
             {{#if concert.photos}}
                 {{#each concert.photos}}
                     <img src="{{this}}" alt="" style="width: 30%; height: 30%">
-                            
                 {{/each}} 
             {{else}}
                 <li>No hay informacion disponible</li>
             {{/if}}
-
         </div>
     </div>
 </div>
 
- <!-- Bootstrap core JavaScript -->
-    <script src="/javascripts/profile/jquery.min.js"></script>
-    <script src="/javascripts/profile/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="/javascripts/profile/jquery.easing.min.js"></script>
-
-    <!-- Contact form JavaScript -->
-    <script src="/javascripts/profile/jqBootstrapValidation.js"></script>
-    <script src="/javascripts/profile/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="/javascripts/profile/agency.min.js"></script>
-
+ <!-- Scipts -->
+<script src="/javascripts/profile/jquery.min.js"></script>
+<script src="/javascripts/profile/bootstrap.bundle.min.js"></script>
+<script src="/javascripts/profile/jquery.easing.min.js"></script>
+<script src="/javascripts/profile/jqBootstrapValidation.js"></script>
+<script src="/javascripts/profile/contact_me.js"></script>
+<script src="/javascripts/profile/agency.min.js"></script>
 <script>
     window.onload = function () {
         const map = new google.maps.Map(document.getElementById("res_map"), {
@@ -150,6 +121,5 @@ Tweet
         }); 
         infowindow.open(map, marker);  
     }
-
 </script>
 

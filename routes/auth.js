@@ -14,22 +14,17 @@ router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/auth/login'
   }));
-// {    
-//     successRedirect: '/concerts',
-//     failureRedirect: '/auth/login'
-// }));
 
 router.get("/register", (req, res) => {
   res.render("register");
 });
 
 router.post("/register", (req, res) => {
-  const { username, email, password } = req.body; //deconsruccion
-  console.log(req.body);
+  const { username, email, password } = req.body; //deconstruccion
 
-  User.register({ username, email }, password) //user.register es un metodo que nos da passport local mongoose para registrar
+User.register({ username, email }, password) //user.register es un metodo que nos da passport local mongoose para registrar
     .then(user => {
-      //recibo el usuario
+    //recibo el usuario
         const options = {
             email: user.email,
             subject: "Correo de prueba",
@@ -45,28 +40,5 @@ router.post("/register", (req, res) => {
         console.log("NO jala el register", err);
     });
 });
-
-//Rutas Index
-// router.get("/", (req, res) => {
-//   res.render("index");
-// });
-
-// router.post(
-//   "/",
-//   passport.authenticate("local", {
-//     successRedirect: "/concerts",
-//     failureRedirect: "/"
-//   })
-// );
-
-//Ruta preloader
-router.get("/preloadPage", (req, res) => {
-  res.render("preloadPage");
-});
-
-console.log();
-
-//Rutas MainPage
-
 
 module.exports = router;
