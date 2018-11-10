@@ -137,13 +137,6 @@ router.post("/form", isLoggedIn, upload.array('photos'), (req, res, next) => {
     }
 });
 
-
-router.get('/:id', (req, res) => {
-    Concert.findById(req.params.id)
-    .populate('owner', 'username')
-    .then(concert => {  
-        res.render('concertDetails', {header: concert.name, concert})
-
 router.get('/:id', isLoggedIn, (req, res) => {
     var currentUser = req.user;
     //console.log(req.params);

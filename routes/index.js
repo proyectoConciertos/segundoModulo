@@ -14,20 +14,6 @@ function isLoggedIn(req, res, next){
     res.redirect("/landing");
 }
 
-function checkIfOwner(req, res, next){
-    Concert.findById(req.params.id)
-        .then(bid => {
-            if(bid.owner.toString() === req.user._id.toString()){
-                req.bid = bid;
-                return next();
-            }
-            res.redirect('/bid');
-        })
-        .catch(() => {
-            res.redirect("/bid");
-        });
-}
-
 /* GET home page */
 router.get("/", isLoggedIn, (req, res, next) => {
     var currentUser = req.user;
@@ -35,7 +21,6 @@ router.get("/", isLoggedIn, (req, res, next) => {
     .then(users => {
         Concert.find()
         .then(concerts => {
-         res.render('profile', {users, concerts});
             res.render('profile', {users, concerts, currentUser});
         })
     });
