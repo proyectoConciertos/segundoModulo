@@ -1,3 +1,10 @@
+<br><br><br>
+<h4>{{followed}}</h4>
+{{#if followed}}
+    <h1>Lo sigo {{followed}}</h1>
+{{else}}
+    <h2>No lo sigo</h2>
+{{/if}}
 <!-- CSS's y Fuentes -->
     <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
     <link href="/stylesheets/profile/all.min.css" rel="stylesheet" type="text/css">
@@ -52,10 +59,13 @@
                         <p class="card-text"><strong>Following: </strong>{{this.following.length}}</p>
                         <p class="card-text"><strong>Followers: </strong>{{this.followers.length}}</p>
                         <form action="/users/{{this.username}}" method="POST">
-                            <input type="text" name="_id" value="{{ this._id }}">
-                            <input type="text" name="username" value="{{ this.username }}">
-                            <button id="followButton" type="submit" class="btn btn-primary">Follow</button>
-                            {{!-- <a href="" type="submit" class="">Follow</a> --}}
+                            <input type="hidden" name="_id" value="{{ this._id }}">
+                            <input type="hidden" name="username" value="{{ this.username }}">
+                            {{#if ../followed}}
+                                <button id="followButton" type="submit" class="btn btn-danger">Unfollow</button>
+                            {{else}}
+                                <button id="followButton" type="submit" class="btn btn-primary">Follow</button>
+                            {{/if}}
                         </form>
                             
                     </div>
@@ -110,6 +120,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    function myFunction() {
+        console.log('Mi ID: ');
+        
+        
+    }
+</script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>

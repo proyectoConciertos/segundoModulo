@@ -11,8 +11,6 @@ router.get("/main", (req, res) => {
   
   router.post("/main", (req, res) => {});
 
-//ricardo rama
-
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next();
     res.redirect("/auth/login");
@@ -34,11 +32,9 @@ function checkIfOwner(req, res, next){
 }
 
 /* GET home page */
-// aksjfhaskjfhajksfh
 router.get("/", isLoggedIn, (req, res, next) => {
     User.find()
     .then(users => {
-        //console.log(users);
         Concert.find()
         .then(concerts => {
 
@@ -48,6 +44,11 @@ router.get("/", isLoggedIn, (req, res, next) => {
 });
 
 router.get('/users/:username', (req, res) => {
+    var followedBool = false;
+    var followed = {
+        a: 'a',
+        b: 'b'
+    }
     User.find({ username: req.params.username})
     .then(user => {
         Concert.find({owner: user[0]._id})
@@ -56,24 +57,30 @@ router.get('/users/:username', (req, res) => {
                 res.render('profile', {concerts,user});
             }
             else {
-                res.render('userProfile', {concerts, user});
+                console.log(user[0]);
+                console.log(req.user);
+                for(let i = 0; i < user[0].followers.length; i++) {
+                    console.log(i);
+                    if(user[0].followers[i].equals(req.user._id)) {
+                        followedBool = true;
+                    }
+                }
+                if(followedBool) {
+                    res.render('userProfile', {concerts, user, followed});
+                }
+                else {
+                    res.render('userProfile', {concerts, user});
+                }
             }
-            //console.log(concerts)
         }) 
     }) 
 });
 
-// FOLLOW A USER -> UPDATE USER FOLLOWING AND FOLLOWER LIST
-// HOW TO FOLLOW/UNFOLLOW?
 router.post('/users/:username', (req, res) => {
-    //let followButton = document.getElementById('followButton');
-    //console.log(followButton);
+    let loSigo = false;
     User.findById(req.body._id)
     .then(user => {
         let followedBool = false;
-        // console.log(user.followers[0]);
-        // console.log(req.user._id);
-
         for(let i = 0; i < user.followers.length; i++) {
             console.log(i);
             if(user.followers[i].equals(req.user._id)) {
@@ -81,6 +88,7 @@ router.post('/users/:username', (req, res) => {
             }
         }
         if(followedBool === true) {
+            loSigo = true;
             console.log('Ya sigues a ese men');
             console.log(`A ${user.username} (${user._id}) lo siguen ${user.followers}`);
             console.log(`A ${req.user.username} (${req.user._id}) sigue a ${req.user.following}`);
@@ -88,7 +96,7 @@ router.post('/users/:username', (req, res) => {
             user.save();
             req.user.following.splice(user._id, 1);
             req.user.save();   
-            res.redirect(req.get('referer'));
+            res.redirect(req.get('referer', {loSigo}));
         } else {
             console.log('Aun no sigues a ese men');
             console.log(`A ${user.username} (${user._id}) lo siguen ${user.followers}`);
@@ -97,12 +105,9 @@ router.post('/users/:username', (req, res) => {
             user.save();
             req.user.following.push(user._id);
             req.user.save();
-            res.redirect(req.get('referer'));
+            res.redirect(req.get('referer', {loSigo}));
         }
-    })
-    // console.log(req.user.followers);
-    // req.user.following
-    // req.user.save();
+    });
     
 })
 //aqui termina
