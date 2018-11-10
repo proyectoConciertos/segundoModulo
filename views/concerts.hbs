@@ -1,23 +1,54 @@
-<div class="container">
-    <div class="list-group">
-        {{#each concerts}}
-            <a href="/concert/{{this._id}}" class="list-group-item list-group-item-action">{{this.date}} - {{this.name}}</a>
-        {{/each}}
-        <a href="/concert/new-concert" class="btn btn-primary">Register a new Concert!</a>
-    </div>
-    <div class="card-columns">
-        {{#each concerts}}
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">{{this.name}}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{this.date}}</h6>
-                    <p class="card-text">{{this.venueName}}</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        {{/each}}
-    </div>
-    
-</div>
+<!-- CSS's y Fuentes -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/profile/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="/stylesheets/profile/agency.min.css" rel="stylesheet">
 
+
+<section class="bg-light" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Todos los conciertos</h2>
+            <h3 class="section-subheading text-muted">Puedes ver los detalles de tus conciertos</h3>
+          </div>
+        </div>
+        <div class="row">
+
+{{#each concerts}}
+
+
+ <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="/concert/{{this._id}}">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src={{this.photos}} alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>{{this.name}}</h4>
+              <p class="text-muted">{{this.date}}</p>
+              <p class="text-muted">{{this.venueName}}</p>
+            </div>
+          </div>
+
+{{/each}}    
+
+  <!-- Bootstrap core JavaScript -->
+    <script src="/javascripts/profile/jquery.min.js"></script>
+    <script src="/javascripts/profile/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/javascripts/profile/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="/javascripts/profile/jqBootstrapValidation.js"></script>
+    <script src="/javascripts/profile/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/javascripts/profile/agency.min.js"></script>
