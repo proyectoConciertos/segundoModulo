@@ -16,16 +16,18 @@ function isLoggedIn(req, res, next){
 }
 
 router.get("/", isLoggedIn, (req, res) => {
+    var currentUser = req.user;
     Concert.find()
     .sort({ date: -1 })
         .then(concerts => {
-            res.render("concerts", {concerts});
+            res.render("concerts", {concerts, currentUser});
         })
 });
 
 /* GET concert form */ 
 router.get("/new-concert", isLoggedIn, (req, res, next) => {
-    res.render("form");
+    var currentUser = req.user;
+    res.render("form", {currentUser});
 });
 
 
