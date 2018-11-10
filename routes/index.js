@@ -7,7 +7,7 @@ const User = require("../models/User");
 
 router.get("/landing", (req, res) => {
     res.render("landing");
-  });
+});
   
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next();
@@ -30,16 +30,18 @@ function checkIfOwner(req, res, next){
 
 /* GET home page */
 router.get("/", isLoggedIn, (req, res, next) => {
+    var currentUser = req.user;
     User.find()
     .then(users => {
         Concert.find()
         .then(concerts => {
          res.render('profile', {users, concerts});
+            res.render('profile', {users, concerts, currentUser});
         })
     });
 });
 
-router.get('/users/:username', (req, res) => {
+router.get('/users/:username', isLoggedIn, (req, res) => {
     var followedBool = false;
     var myObj = {
         myString: 'Hi'
@@ -75,7 +77,7 @@ router.get('/users/:username', (req, res) => {
     }) 
 });
 
-router.post('/users/:username', (req, res) => {
+router.post('/users/:username', isLoggedIn, (req, res) => {
     let loSigo = false;
     User.findById(req.body._id)
     .then(user => {
@@ -88,18 +90,12 @@ router.post('/users/:username', (req, res) => {
         }
         if(followedBool === true) {
             loSigo = true;
-            console.log('Ya sigues a ese men');
-            console.log(`A ${user.username} (${user._id}) lo siguen ${user.followers}`);
-            console.log(`A ${req.user.username} (${req.user._id}) sigue a ${req.user.following}`);
             user.followers.splice(req.body._id, 1);
             user.save();
             req.user.following.splice(user._id, 1);
             req.user.save();   
             res.redirect(req.get('referer', {loSigo}));
         } else {
-            console.log('Aun no sigues a ese men');
-            console.log(`A ${user.username} (${user._id}) lo siguen ${user.followers}`);
-            console.log(`A ${req.user.username} (${req.user._id}) sigue a ${req.user.following}`);
             user.followers.push(req.user._id);
             user.save();
             req.user.following.push(user._id);
