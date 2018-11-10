@@ -32,7 +32,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/users">Perfil</a>
+          <a class="nav-link js-scroll-trigger" href="/users/{{currentUser.username}}">Perfil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#">Usuarios</a>
@@ -62,7 +62,7 @@
     <div class="intro-text">
       <div class="intro-lead-in">Bienvenido!</div>
       <div class="intro-heading text-uppercase">Donde revives tu experiencia</div>
-      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#">Mi Perfil</a>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/users/{{currentUser.username}}">Mi Perfil</a>
     </div>
   </div>
 </header>
