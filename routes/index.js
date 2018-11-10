@@ -5,15 +5,15 @@ const Concert = require("../models/Concert");
 const User = require("../models/User");
 
 
-router.get("/main", (req, res) => {
-    res.render("main");
+router.get("/landing", (req, res) => {
+    res.render("landing");
   });
   
-  router.post("/main", (req, res) => {});
+ 
 
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next();
-    res.redirect("/auth/login");
+    res.redirect("/landing");
 }
 
 function checkIfOwner(req, res, next){
