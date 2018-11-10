@@ -9,8 +9,6 @@ router.get("/landing", (req, res) => {
     res.render("landing");
   });
   
- 
-
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next();
     res.redirect("/landing");
@@ -27,7 +25,6 @@ function checkIfOwner(req, res, next){
         })
         .catch(() => {
             res.redirect("/bid");
-            console.log('ajdhajdhajd');
         });
 }
 
@@ -37,15 +34,13 @@ router.get("/", isLoggedIn, (req, res, next) => {
     .then(users => {
         Concert.find()
         .then(concerts => {
-
-            res.render('profile', {users, concerts});
+         res.render('profile', {users, concerts});
         })
     });
 });
 
 router.get('/users/:username', (req, res) => {
     var followedBool = false;
-    //var myProfile = false;
     var myObj = {
         myString: 'Hi'
     }
@@ -115,5 +110,4 @@ router.post('/users/:username', (req, res) => {
     
 })
 
-//aqui termina
 module.exports = router;
