@@ -112,7 +112,7 @@ router.post("/form", isLoggedIn, upload.array('photos'), (req, res, next) => {
             req.body.setlist = setlistSongs;
             
             setlist = setlistSongs;
-             concert = {
+            concert = {
                 owner,
                 name,
                 date,

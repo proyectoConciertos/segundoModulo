@@ -54,7 +54,7 @@
                         <p class="card-text"><strong>Followers: </strong>{{this.followers.length}}</p>
                         
                         {{#if ../myObj}}
-                            <button>Editar perfil</button>
+                            
 
                         {{else}}
                             <form action="/users/{{this.username}}" method="POST">
@@ -72,6 +72,10 @@
                     </div>
                 </div>
             {{/each}}
+            {{#if myObj}}
+                <a href="#" class="btn btn-primary">Edit profile</a>
+            {{/if}}
+            
 
             <br>
             <br>

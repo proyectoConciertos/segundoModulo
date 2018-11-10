@@ -105,11 +105,22 @@
         <div class="form-group">
 
             <label for="concertRating" class="txt1">Rating</label>
-            <div class="rating-container rating-lg rating-animate">
+            {{!-- <div class="rating-container rating-lg rating-animate">
                 <div class="rating-stars" title="0.4 Stars">
                     <input id="input-21b" value="0" type="text" class="rating rating-input" data-min="0" data-max="5" data-step="0.5" data-size="lg"
                         required="" title="" name="rate">
                 </div>
+            </div> --}}
+            <div class="dropdown">
+            
+                <select name="rate">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                {{!-- <input type="submit" value="Submit"> --}}
             </div>
 
         </div>
