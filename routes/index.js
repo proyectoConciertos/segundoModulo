@@ -21,7 +21,6 @@ router.get("/", isLoggedIn, (req, res, next) => {
     .then(users => {
         Concert.find()
         .then(concerts => {
-
             res.render('profile', {users, concerts, currentUser});
         })
     });
