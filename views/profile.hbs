@@ -21,52 +21,6 @@
 
   <body id="page-top">
 
-
-    <!-- NavBar -->
-    
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#">Concert.me</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/users/">Perfil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Usuarios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/concert">Feed</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/concert/new-concert">Registra un concierto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Artistas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Contacto</a>
-            </li>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/landing">Log out</a>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-
-    <!-- Header -->
-    <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in">Bienvenido a Concert.me!</div>
-          <div class="intro-heading text-uppercase">Donde revives tu experiencia</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/users/{{currentUser.username}}">Mi Perfil</a>
-        </div>
-
 <!-- NavBar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
   <div class="container">
@@ -130,7 +84,6 @@
         </span>
         <h4 class="service-heading">¡Reseña!</h4>
         <p class="text-muted">Todos los detalles de tus conciertos quedarán guardados. Podrás subir tus mejores fotos, hacer reseñas, calificar en ranking y explorar nuevas presentaciones de tus artistas favoritos</p>
-
       </div>
       <div class="col-md-4">
         <span class="fa-stack fa-4x">
@@ -266,7 +219,7 @@
                 {{/each}}
                 <a href="/concert/new-concert" class="btn btn-primary">Registra un nuevo concierto</a>
             </div>
-            <h3 class="usuarios">Usuarios</h3>
+            <h3>Usuarios</h3>
             <div class="list-group">
                 {{#each users}}
                     <a href="/users/{{this.username}}" class="list-group-item list-group-item-action">{{this.username}} - {{this.email}}</a>
@@ -425,7 +378,6 @@
               <button class="btn btn-primary" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
                 Cerrar</button>
->>>>>>> gus
             </div>
           </div>
         </div>
@@ -467,7 +419,6 @@
     </div>
   </div>
 </div>
-
 
 <!-- Modal 4 -->
 <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
