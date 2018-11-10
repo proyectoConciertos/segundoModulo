@@ -1,25 +1,26 @@
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>Concert.me</title>
+<title>Concert.me</title>
 
 <!-- CSS's y Fuentes -->
 
-    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
-    <link href="/stylesheets/profile/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/profile/agency.min.css" rel="stylesheet">
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+<link href="/stylesheets/profile/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+<link href="/stylesheets/profile/agency.min.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
+
 
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -64,150 +65,195 @@
           <div class="intro-heading text-uppercase">Donde revives tu experiencia</div>
           <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/users/{{currentUser.username}}">Mi Perfil</a>
         </div>
+
+<!-- NavBar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">Concert.me</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/users">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#">Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/concert">Feed</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/concert/new-concert">Registra un concierto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#">Artistas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#">Contacto</a>
+        </li>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/auth/login">Log out</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Header -->
+<header class="masthead">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-lead-in">Bienvenido a Concert.me!</div>
+      <div class="intro-heading text-uppercase">Donde revives tu experiencia</div>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#">Mi Perfil</a>
+    </div>
+  </div>
+</header>
+
+<!-- Datos -->
+<section id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">¿Cómo funciona concert.me?</h2>
+        <h3 class="section-subheading text-muted">Es muy sencillo.</h3>
       </div>
-    </header>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fas fa-circle fa-stack-2x text-primary"></i>
+          <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">¡Reseña!</h4>
+        <p class="text-muted">Todos los detalles de tus conciertos quedarán guardados. Podrás subir tus mejores fotos, hacer reseñas, calificar en ranking y explorar nuevas presentaciones de tus artistas favoritos</p>
 
-    <!-- Datos -->
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">¿Cómo funciona concert.me?</h2>
-            <h3 class="section-subheading text-muted">Es muy sencillo.</h3>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">¡Reseña!</h4>
-            <p class="text-muted">Todos los detalles de tus conciertos quedarán guardados. Podrás subir tus mejores fotos, hacer reseñas, calificar en ranking y explorar nuevas presentaciones de tus artistas favoritos</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">¡Revive!</h4>
-            <p class="text-muted">Al registrar un concierto tendrás la posibilidad de revivir la playlist exacta que escuchaste con enlaces directos a Youtube, detalles del concierto, localización del lugar de presentación y mucho más.</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">¡Comparte!</h4>
-            <p class="text-muted">Podrás hacer enlaces directos a redes sociales para que tus contactos conozcan la experiencia. ¡Invitalos!</p>
-          </div>
-        </div>
       </div>
-    </section>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fas fa-circle fa-stack-2x text-primary"></i>
+          <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">¡Revive!</h4>
+        <p class="text-muted">Al registrar un concierto tendrás la posibilidad de revivir la playlist exacta que escuchaste con enlaces directos a Youtube, detalles del concierto, localización del lugar de presentación y mucho más.</p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fas fa-circle fa-stack-2x text-primary"></i>
+          <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">¡Comparte!</h4>
+        <p class="text-muted">Podrás hacer enlaces directos a redes sociales para que tus contactos conozcan la experiencia. ¡Invitalos!</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- BLOG-->
-    <section class="bg-light" id="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Nuestro Blog</h2>
-            <h3 class="section-subheading text-muted">Reseñas, articulos y próximos conciertos</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="/stylesheets/mainPage/hh18.jpeg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Hell and Heaven 2018</h4>
-              <p class="text-muted">04 de Mayo de 2018</p>
+<!-- BLOG-->
+<section class="bg-light" id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Nuestro Blog</h2>
+        <h3 class="section-subheading text-muted">Reseñas, articulos y próximos conciertos</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
             </div>
           </div>
-
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="/stylesheets/mainPage/coldplay.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Coldplay</h4>
-              <p class="text-muted">La banda de pop contemporánea más grande</p>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="/stylesheets/mainPage/palnorte.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Tecate Pa'l Norte 2019
-              </h4>
-              <p class="text-muted">22 y 23 de Marzo de 2019</p>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="/stylesheets/mainPage/ghostband.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Ghost BC</h4>
-              <p class="text-muted">Pop Metal con letras transgresoras. ¿Te atreves a escucharlos?</p>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="/stylesheets/mainPage/santana2.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Vive Latino 2019</h4>
-              <p class="text-muted">Carlos Santana viene a cerrar el Vive Latino en 2019. Imperdible.</p>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="/stylesheets/mainPage/corona.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Corona Capital 2018</h4>
-              <p class="text-muted">Falta poco. ¿Te lo vas a perder?</p>
-            </div>
-          </div>
+          <img class="img-fluid" src="/stylesheets/mainPage/hh18.jpeg" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <h4>Hell and Heaven 2018</h4>
+          <p class="text-muted">04 de Mayo de 2018</p>
         </div>
       </div>
-    </section>
+
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="/stylesheets/mainPage/coldplay.jpg" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <h4>Coldplay</h4>
+          <p class="text-muted">La banda de pop contemporánea más grande</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="/stylesheets/mainPage/palnorte.jpg" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <h4>Tecate Pa'l Norte 2019
+          </h4>
+          <p class="text-muted">22 y 23 de Marzo de 2019</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="/stylesheets/mainPage/ghostband.jpg" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <h4>Ghost BC</h4>
+          <p class="text-muted">Pop Metal con letras transgresoras. ¿Te atreves a escucharlos?</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="/stylesheets/mainPage/santana2.jpg" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <h4>Vive Latino 2019</h4>
+          <p class="text-muted">Carlos Santana viene a cerrar el Vive Latino en 2019. Imperdible.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="/stylesheets/mainPage/corona.jpg" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <h4>Corona Capital 2018</h4>
+          <p class="text-muted">Falta poco. ¿Te lo vas a perder?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Lista de conciertos -->
 <section>
@@ -231,311 +277,307 @@
 </div>
 </section>
 
-    <!-- Contacto -->
-    <section id="contact">
+<!-- Contacto -->
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Contactanos</h2>
+        <h3 class="section-subheading text-muted">Tu opinión es lo más valioso para nosotros</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <form id="contactForm" name="sentMessage" novalidate="novalidate">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" id="name" type="text" placeholder="Tu nombre *" required="required" data-validation-required-message="Por favor ingresa tu nombre">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <input class="form-control" id="email" type="email" placeholder="Tu email *" required="required" data-validation-required-message="Por favor ingresa tu email">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <input class="form-control" id="phone" type="tel" placeholder="Tu teléfono *" required="required" data-validation-required-message="Por favor ingresa tu teléfono">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <textarea class="form-control" id="message" placeholder="Tu mensaje" required="required" data-validation-required-message="Por favor ingresa un mensaje"></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-lg-12 text-center">
+              <div id="success"></div>
+              <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Enviar mensaje</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <a href="#">Aviso de privacidad</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Términos de uso</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Modals -->
+
+<!-- Modal 1 -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Contactanos</h2>
-            <h3 class="section-subheading text-muted">Tu opinión es lo más valioso para nosotros</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <form id="contactForm" name="sentMessage" novalidate="novalidate">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control" id="name" type="text" placeholder="Tu nombre *" required="required" data-validation-required-message="Por favor ingresa tu nombre">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="email" type="email" placeholder="Tu email *" required="required" data-validation-required-message="Por favor ingresa tu email">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="phone" type="tel" placeholder="Tu teléfono *" required="required" data-validation-required-message="Por favor ingresa tu teléfono">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <textarea class="form-control" id="message" placeholder="Tu mensaje" required="required" data-validation-required-message="Por favor ingresa un mensaje"></textarea>
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-lg-12 text-center">
-                  <div id="success"></div>
-                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Enviar mensaje</button>
-                </div>
-              </div>
-            </form>
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Hell and Heaven 2018</h2>
+              <p class="item-intro text-muted">¡El festival de metal más grande de Latinoamérica!</p>
+              <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/hh18.jpeg" alt="">
+              <p>Cada año se dan cita en el Autódromo Hermanos Rodriguez las mejores bandas de rock y metal. Este año, Deep Purple, Judas Priest, Ozzy Osbourne y Scorpions fueron los encargados de descargar toda la furia de los headbangers mexicanos.</p>
+              <ul class="list-inline">
+                <li>04 de Mayo de 2018</li>
+                <li>Categoria: Festivales</li>
+                <li>Rating: 4.5</li>
+              </ul>
+              <button class="btn btn-primary" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                Cerrar</button>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</div>
 
-
-
-
-    <!-- Footer -->
-    <footer>
+<!-- Modal 2 -->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <ul class="list-inline quicklinks">
-              <li class="list-inline-item">
-                <a href="#">Aviso de privacidad</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Términos de uso</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Modals -->
-
-    <!-- Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Hell and Heaven 2018</h2>
-                  <p class="item-intro text-muted">¡El festival de metal más grande de Latinoamérica!</p>
-                  <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/hh18.jpeg" alt="">
-                  <p>Cada año se dan cita en el Autódromo Hermanos Rodriguez las mejores bandas de rock y metal. Este año, Deep Purple, Judas Priest, Ozzy Osbourne y Scorpions fueron los encargados de descargar toda la furia de los headbangers mexicanos.</p>
-                  <ul class="list-inline">
-                    <li>04 de Mayo de 2018</li>
-                    <li>Categoria: Festivales</li>
-                    <li>Rating: 4.5</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Coldplay</h2>
+              <p class="item-intro text-muted">La banda de pop contemporánea más grande</p>
+              <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/coldplay.jpg" alt="">
+              <p>Es innegable la calidad musical de Coldplay, sin embargo, los fans ya quieren un nuevo material. Pero la paciencia tiene que ser muy grande ya que siempre que Coldplay ofrece algo nuevo es sinónimo de calidad. Por ello, son la banda contemporánea más exitosa del pop.</p>
+              <ul class="list-inline">
+                <li>11 de Octubre de 2018</li>
+                <li>Categoría: Artistas</li>
+                <li>Rating: 4.1</li>
+              </ul>
+              <button class="btn btn-primary" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                Cerrar</button>
+>>>>>>> gus
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Coldplay</h2>
-                  <p class="item-intro text-muted">¿Porque no hay nada nuevo de Coldplay?</p>
-                  <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/coldplay.jpg" alt="">
-                  <p>Es innegable la calidad musical de Coldplay, sin embargo, los fans ya quieren un nuevo material. Pero la paciencia tiene que ser muy grande ya que siempre que Coldplay ofrece algo nuevo es sinónimo de calidad. Por ello, son la banda contemporánea más exitosa del pop.</p>
-                  <ul class="list-inline">
-                    <li>11 de Octubre de 2018</li>
-                    <li>Categoría: Artistas</li>
-                    <li>Rating: 4.1</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
+<!-- Modal 3 -->
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">TECATE PA'L NORTE 2019</h2>
+              <p class="item-intro text-muted">Para la raza regia</p>
+              <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/palnorte.jpg" alt="">
+              <p>Año con año el Festival Pa'l Norte demuestra que está a la altura de grandes festivales internacionales. En 2018 fueron Muse y Queens of the Stone Age quienes se encargaron de levantar a la raza regia. ¿Qué nos espera este año?</p>
+              <ul class="list-inline">
+                <li>Fecha: 22 y 23 de Marzo 2019</li>
+                <li>Categoría: Festivales</li>
+                <li>Rating: 4.8</li>
+              </ul>
+              <button class="btn btn-primary" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                Cerrar</button>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Tecate Pa'l Norte 2019</h2>
-                  <p class="item-intro text-muted">Para la raza regia</p>
-                  <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/palnorte.jpg" alt="">
-                  <p>Año con año el Festival Pa'l Norte demuestra que está a la altura de grandes festivales internacionales. En 2018 fueron Muse y Queens of the Stone Age quienes se encargaron de levantar a la raza regia. ¿Qué nos espera este año?</p>
-                  <ul class="list-inline">
-                    <li>Fecha: 22 y 23 de Marzo 2019</li>
-                    <li>Categoría: Festivales</li>
-                    <li>Rating: 4.8</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
+
+<!-- Modal 4 -->
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Ghost BC</h2>
+              <p class="item-intro text-muted">¿Ya conoces al Papa Emeritus III?</p>
+              <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/ghostband.jpg" alt="">
+              <p>Los integrantes de Ghost nunca han negado sus influencias satánicas y eso se ve reflejado en sus letras, sin embargo, sus ritmos mezclados desde un synth pop hasta el metal y el glam rock demuestran la gran calidad y versatilidad de la banda europea. Sin duda, van en camino a algo muy grande. Hail Satan!</p>
+              <ul class="list-inline">
+                <li>Fecha: 09 de noviembre</li>
+                <li>Categoría: Bandas</li>
+                <li>Ranking: 4.9</li>
+              </ul>
+              <button class="btn btn-primary" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                Cerrar</button>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Ghost BC</h2>
-                  <p class="item-intro text-muted">¿Ya conoces al Papa Emeritus III?</p>
-                  <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/ghostband.jpg" alt="">
-                  <p>Los integrantes de Ghost nunca han negado sus influencias satánicas y eso se ve reflejado en sus letras, sin embargo, sus ritmos mezclados desde un synth pop hasta el metal y el glam rock demuestran la gran calidad y versatilidad de la banda europea. Sin duda, van en camino a algo muy grande. Hail Satan!</p>
-                  <ul class="list-inline">
-                    <li>Fecha: 09 de noviembre</li>
-                    <li>Categoría: Bandas</li>
-                    <li>Ranking: 4.9</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
+<!-- Modal 5 -->
+<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Vive Latino 2019</h2>
+              <p class="item-intro text-muted">¡El 20 aniversario del Vive!</p>
+              <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/santana.jpg" alt="">
+              <p>Se acerca el 20 Aniversario del festival musical más grande de Latinoamérica y lo cerrará nada menos que Carlos Santana. ¿Te lo vas a perder?</p>
+              <ul class="list-inline">
+                <li>Fecha: 20 de Marzo 2019</li>
+                <li>Categoría: Festivales</li>
+                <li>Ranking: 4.2</li>
+              </ul>
+              <button class="btn btn-primary" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                Cerrar</button>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Vive Latino 2019</h2>
-                  <p class="item-intro text-muted">¡El 20 aniversario del Vive!</p>
-                  <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/santana.jpg" alt="">
-                  <p>Se acerca el 20 Aniversario del festival musical más grande de Latinoamérica y lo cerrará nada menos que Carlos Santana. ¿Te lo vas a perder?</p>
-                  <ul class="list-inline">
-                    <li>Fecha: 20 de Marzo 2019</li>
-                    <li>Categoría: Festivales</li>
-                    <li>Ranking: 4.2</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
+<!-- Modal 6 -->
+<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Corona Capital 2018</h2>
+              <p class="item-intro text-muted">Gran diversidad en este festival</p>
+              <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/corona.jpg" alt="">
+              <p>El festival favorito de la banda millenial. Viene Nine inch Nails!</p>
+              <ul class="list-inline">
+                <li>Fecha: 17 de Noviembre</li>
+                <li>Categoría: Festivales</li>
+                <li>Ranking: 3.9</li>
+              </ul>
+              <button class="btn btn-primary" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                Cerrar</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Corona Capital 2018</h2>
-                  <p class="item-intro text-muted">Gran diversidad en este festival</p>
-                  <img class="img-fluid d-block mx-auto" src="/stylesheets/mainPage/corona.jpg" alt="">
-                  <p>El festival favorito de la banda millenial. Viene Nine inch Nails!</p>
-                  <ul class="list-inline">
-                    <li>Fecha: 17 de Noviembre</li>
-                    <li>Categoría: Festivales</li>
-                    <li>Ranking: 3.9</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
+</div>
 
 
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="/javascripts/profile/jquery.min.js"></script>
-    <script src="/javascripts/profile/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="/javascripts/profile/jquery.easing.min.js"></script>
-
-    <!-- Contact form JavaScript -->
-    <script src="/javascripts/profile/jqBootstrapValidation.js"></script>
-    <script src="/javascripts/profile/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="/javascripts/profile/agency.min.js"></script>
+<!-- Scripts -->
+<script src="/javascripts/profile/jquery.min.js"></script>
+<script src="/javascripts/profile/bootstrap.bundle.min.js"></script>
+<script src="/javascripts/profile/jquery.easing.min.js"></script>
+<script src="/javascripts/profile/jqBootstrapValidation.js"></script>
+<script src="/javascripts/profile/contact_me.js"></script>
+<script src="/javascripts/profile/agency.min.js"></script>
 
   </body>
