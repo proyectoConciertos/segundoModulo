@@ -39,6 +39,8 @@
 
  <br><br><br><br><br><br>   
 
+<style type="text/css">h1 { text-align: center}</style>
+
 <h1>{{concert.owner.username}} vió a {{header}}</h1>
 <div class="container">
 
@@ -67,6 +69,33 @@
             <p class="card-text"><strong>Rating:</strong></p>
             <p class="card-text">{{concert.rate}}</p>
             <br><br>
+            
+
+
+            <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=1041885965993693&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-share-button" data-href="https://concert-me.herokuapp.com" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fconcert-me.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
+
+<a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet"
+  data-size="large"
+  data-text="custom share text"
+  data-url="https://concert-me.herokuapp.com"
+  data-hashtags="example,demo"
+  data-via="twitterdev"
+  data-related="twitterapi,twitter">
+Tweet
+</a>    
+
+<br><br><br>
+
             <p class="card-text"><strong>Setlist:</strong></p>
             {{#each concert.setlist}}
                 <p class="card-text">{{this}}</p>
