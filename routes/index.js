@@ -45,6 +45,10 @@ router.get("/", isLoggedIn, (req, res, next) => {
 
 router.get('/users/:username', (req, res) => {
     var followedBool = false;
+    //var myProfile = false;
+    var myObj = {
+        myString: 'Hi'
+    }
     var followed = {
         a: 'a',
         b: 'b'
@@ -54,7 +58,7 @@ router.get('/users/:username', (req, res) => {
         Concert.find({owner: user[0]._id})
         .then(concerts => {
             if(req.user.username === user[0].username) {
-                res.render('profile', {concerts,user});
+                res.render('userProfile', {concerts,user, myObj});
             }
             else {
                 console.log(user[0]);

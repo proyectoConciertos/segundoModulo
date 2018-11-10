@@ -1,10 +1,4 @@
-<br><br><br>
-<h4>{{followed}}</h4>
-{{#if followed}}
-    <h1>Lo sigo {{followed}}</h1>
-{{else}}
-    <h2>No lo sigo</h2>
-{{/if}}
+
 <!-- CSS's y Fuentes -->
     <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
     <link href="/stylesheets/profile/all.min.css" rel="stylesheet" type="text/css">
@@ -58,7 +52,12 @@
                         <p class="card-text">{{this.email}}</p>
                         <p class="card-text"><strong>Following: </strong>{{this.following.length}}</p>
                         <p class="card-text"><strong>Followers: </strong>{{this.followers.length}}</p>
-                        <form action="/users/{{this.username}}" method="POST">
+                        
+                        {{#if ../myObj}}
+                            <button>Editar perfil</button>
+
+                        {{else}}
+                            <form action="/users/{{this.username}}" method="POST">
                             <input type="hidden" name="_id" value="{{ this._id }}">
                             <input type="hidden" name="username" value="{{ this.username }}">
                             {{#if ../followed}}
@@ -67,6 +66,8 @@
                                 <button id="followButton" type="submit" class="btn btn-primary">Follow</button>
                             {{/if}}
                         </form>
+                        {{/if}}
+                        
                             
                     </div>
                 </div>
@@ -108,15 +109,18 @@
                 {{#each concerts}}
                 <a href="/concert/{{this._id}}" class="list-group-item list-group-item-action">{{this.date}} - {{this.name}}</a>
                 {{/each}}
-                <a href="/concert/new-concert" class="btn btn-primary">Register a new Concert!</a>
+                {{#if myObj}}
+                    <a href="/concert/new-concert" class="btn btn-primary">Register a new Concert!</a>
+                {{/if}}
+                
             </div>
-            <h3>Users</h3>
+            {{!-- <h3>Users</h3>
             <div class="list-group">
                 {{#each users}}
                 <a href="/users/{{this.username}}" class="list-group-item list-group-item-action">{{this.username}} - {{this.email}}</a>
                 {{/each}}
                 <a href="/concert/new-concert" class="btn btn-primary">Wat</a>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
